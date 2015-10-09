@@ -107,7 +107,7 @@ Fmap = reshape(Fmap.*Fstim,n1,n2)';
 
 %% Run bootstrap to get CIs
 
-nboot = 20;  % Number of bootstrap samples to draw
+nboot = 100;  % Number of bootstrap samples to draw
 
 % Chunk up stimuli and responses into little contiguous chunks
 bootchunk = 1/dtbin;  % 10 bins (1 second) per discrete chunk.
