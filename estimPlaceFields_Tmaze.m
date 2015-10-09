@@ -120,7 +120,7 @@ pos1 = get(ah1,'position');
 [~,isliceY] = min(abs(xp1));
 
 % Error bars  (+/- 2SD);
-Fci = 2*sqrt(reshape(asdstats.Lpostdiag,n1,n2)');
+Fci = 1.96*sqrt(reshape(asdstats.Lpostdiag,n1,n2)');
 
 subplot(324);
 plot(xp1,Fmap(isliceX,:), 'b', 'linewidth', 2);

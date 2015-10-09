@@ -111,7 +111,7 @@ plot([0 50], xp2(islice2)*[1 1], 'b');
 hold off;
 
 % Error bars  (+/- 2SD);
-Fci = 2*sqrt(reshape(asdstats.Lpostdiag,n1,n2)');
+Fci = 1.96*sqrt(reshape(asdstats.Lpostdiag,n1,n2)');
 
 ah2 = subplot(324);
 plot(xp1,Fmap(islice2,:), 'b', 'linewidth', 2);
