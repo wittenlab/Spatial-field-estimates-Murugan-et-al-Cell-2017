@@ -15,7 +15,7 @@ addpath code_fastASD;
 addpath tools_misc;
 
 % Load rat position data
-load ../forJonathan; % CHANGE THIS
+load ../data_first2sets/forJonathan; % CHANGE THIS
 x1 = double(xscope_recordingtimes); clear xscope_recordingtimes;
 x2 = double(yscope_recordingtimes); clear yscope_recordingtimes;
 
