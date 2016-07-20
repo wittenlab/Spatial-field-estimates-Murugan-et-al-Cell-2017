@@ -42,15 +42,15 @@ Bfft = cell(nd,1); % Fourier basis matrix for each filter dimension
 wvecs = cell(nd,1); % Fourier frequencies for each filter dimension
 ncoeff = zeros(nd,1);
 opt1.condthresh = condthresh;
-fprintf('\ncompLSsuffstats_fourier:\n # filter freqs per stimulus dim:');
+%fprintf('\ncompLSsuffstats_fourier:\n # filter freqs per stimulus dim:');
 % Loop through dimensions
 for jj = 1:nd
     opt1.nxcirc = nxcirc(jj); 
     [cdiagvecs{jj},Bfft{jj},wvecs{jj}] = mkcov_ASDfactored([minlens(jj);1],dims(jj),opt1);
     ncoeff(jj) = length(cdiagvecs{jj}); % number of coeffs
-    fprintf(' %d ', ncoeff(jj));
+    %fprintf(' %d ', ncoeff(jj));
 end
-fprintf('\n Total # Fourier coeffs represented: %d\n\n', prod(ncoeff));
+%fprintf('\n Total # Fourier coeffs represented: %d\n\n', prod(ncoeff));
 
 switch nd  
     % switch based on stimulus dimension

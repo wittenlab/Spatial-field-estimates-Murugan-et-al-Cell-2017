@@ -39,7 +39,7 @@ wwnrmtot = sum(wwnrm,2);
 % (This is just for initial grid search, w/ ranges set using crude heuristics)
 
 % lengthscale range
-lrange = [min(minlens),max(max(minlens)*3,max(dims)/4)];
+lrange = [min(minlens),max(dims)];
 
 % rho (marginal variance)
 rhomax = 2*(dd.yy./dd.nsamps)/mean(diag(dd.xx)); % ratio of output to input variance
@@ -69,7 +69,7 @@ rnges = [lrange;trhorange;nsevarrange];  % range for grid
 %% ========== Optimize evidence using fmincon ======================================
 
 LB = [min(minlens); 1e-2; 1e-2];  % lower bounds
-UB = inf(3,1); % upper bounds
+UB = [lrange(2), trhorange(2), nsevarrange(2)]; % upper bounds
 
 fminopts = optimset('gradobj','on','Hessian','on','display','off',...
     'algorithm','trust-region-reflective','maxfunevals',1000,'maxiter',1000);
