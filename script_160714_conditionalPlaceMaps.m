@@ -86,9 +86,9 @@ title(varnames{varnum},'interpreter','none')
 jjneur = 5;  % cell number
 
 % Find ML estimate (position triggered average for each condition) 
-Fml0 =(xstim(ii0,:)'*xstim(ii0,:)+.00001*eye(n1*n2))\(xstim(ii0,:)'*y(ii0));
+Fml0 =(xstim(ii0,:)'*xstim(ii0,:)+.00001*eye(n1*n2))\(xstim(ii0,:)'*yy(ii0,jjneur));
 Fml0 = reshape(Fml0,n1,n2)';
-Fml1 =(xstim(ii1,:)'*xstim(ii1,:)+.00001*eye(n1*n2))\(xstim(ii1,:)'*y(ii1));
+Fml1 =(xstim(ii1,:)'*xstim(ii1,:)+.00001*eye(n1*n2))\(xstim(ii1,:)'*yy(ii1,jjneur));
 Fml1 = reshape(Fml1,n1,n2)';
 
 % Plot it
